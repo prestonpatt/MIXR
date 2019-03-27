@@ -7,18 +7,10 @@ A Favor-esque liquor delivery app where a user can order alcoholic beverages for
 
 
 ## Sketch
-<<<<<<< HEAD
     **Mockup of front page**
     ![picture](assets/images/image.png "Sketch")
-=======
-    TBD
->>>>>>> 328254a2969a5e91564abbb74c33134e1324c468
 ## Technologies Used
     HTML, CSS, JavaScript, jQuery, MySQL, Express, Node, Sequelize
     TheCocktailDB API
 ## Issues
-<<<<<<< HEAD
     Issues will be assigned as we flesh out our ideas.
-=======
-    Issues will be assigned as we flesh out our ideas.
->>>>>>> 328254a2969a5e91564abbb74c33134e1324c468
