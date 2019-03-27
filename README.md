@@ -8,7 +8,7 @@ A Favor-esque liquor delivery app where a user can order alcoholic beverages for
 
 ## Sketch
     **Mockup of front page**
-    ![picture](assets/images/index.png "Index")
+    ![picture](assets/images/index.png)
     **Mockup of a search page**
     ![picture](assets/images/results.png "Results")
 ## Technologies Used
