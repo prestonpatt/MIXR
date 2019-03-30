@@ -1,0 +1,12 @@
+.Tilt {
+  background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 70%);
+}
+
+.particles {
+  position:fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
