@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
 var db = require("../models");
 
 module.exports = function (app) {
@@ -26,19 +28,9 @@ module.exports = function (app) {
   // res.status(200)
   });
 
-
-
-  // Create a new example
-  app.post("/api/Drinks", function (req, res) {
-    db.Example.create(req.body).then(function (dbDrinks) {
-      res.json(dbDrinks);
+  app.post("/api/Users", function(req, res) {
+    db.Users.create(req.body).then(function(result) {
+      res.json(result);
     });
   });
-
-//   // Delete an example by id
-//   app.delete("/api/examples/:id", function (req, res) {
-//     db.Example.destroy({ where: { id: req.params.id } }).then(function (dbDrinks) {
-//       res.json(dbDrinks);
-//     });
-//   });
 };
