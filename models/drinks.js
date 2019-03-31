@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 module.exports = function(sequelize, DataTypes) {
   var Drinks = sequelize.define("drinks", {
     id: {
@@ -46,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
     strVideo: DataTypes.STRING
   }, {
     timestamps: false
-  })
+  });
 
   return Drinks;
-}
+};

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 var db = require("../models");
 
 module.exports = function(app) {
@@ -7,12 +8,11 @@ module.exports = function(app) {
       res.status(200);
     });
   });
-
-}
+};
 
 //   // Load example page and pass in an example by id
 //   app.get("/signin", function(req, res) {
-//     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) 
+//     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample)
 //     {
 //       res.json(dbExample)
 //     });
@@ -22,4 +22,4 @@ module.exports = function(app) {
 //   app.get("*", function(req, res) {
 //     res.render("404");
 //   });
-// 
+//
