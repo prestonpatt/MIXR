@@ -20,6 +20,7 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
             validate: {
                 isEmail: true,
+                
             }
         },
         age: {
