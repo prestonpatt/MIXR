@@ -27,10 +27,4 @@ module.exports = function (app) {
     });
   // res.status(200)
   });
-
-  app.post("/api/Users", function(req, res) {
-    db.Users.create(req.body).then(function(result) {
-      res.json(result);
-    });
-  });
 };

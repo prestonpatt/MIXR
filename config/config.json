@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Bearscare1!",
+    "password": "password",
     "database": "cocktailsDB",
     "host": "localhost",
     "dialect": "mysql"

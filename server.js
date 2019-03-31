@@ -1,6 +1,9 @@
+/* eslint-disable quotes */
+/* eslint-disable prettier/prettier */
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+
 
 var db = require("./models");
 
@@ -24,6 +27,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/auth")(app);
 
 var syncOptions = { force: false };
 
