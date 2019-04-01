@@ -1,39 +1,28 @@
 import React, { Component } from 'react';
-// import Particles from 'react-particles-js';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Logo from './components/Logo/Logo';
 import SearchForm from './components/SearchForm/SearchForm';
 import './App.css';
-
-// const particlesOptions = {
-//   particles: {
-//     number: {
-//       value: 200,
-//       density: {
-//         enable: true,
-//         value_area: 800
-//       }
-//     }
-//   }
-// }
+import CardList from './components/CardList/CardList';
+import Scroll from './components/Scroll/Scroll';
+import drinks from './drinks';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      drinks: drinks,
+      onInputChange: '',
+      onButtonSubmit: '',
       input: '',
-      imageUrl: '',
-      box: {},
       route: 'signin',
       isSignedIn: false,
       user: {
         id: '',
         name: '',
-        email: '',
-        entries: 0,
-        joined: ''
+        email: ''
       }
     }
   }
@@ -48,14 +37,18 @@ class App extends Component {
     this.setState({user: {
       id: data.id,
       name: data.name,
-      email: data.email,
-      entries: data.entries,
-      joined: data.joined
+      email: data.email
     }})
   }
 
   onInputChange = (event) => {
-    this.setState({input: event.target.value});
+    console.log(event.target.value);
+    this.setState({input: event.target.value})
+  }
+  
+  onButtonSubmit = () => {
+    this.setState({ onButtonSubmit: this.state.onInputChange })
+    console.log('click');
   }
 
   onRouteChange = (route) => {
@@ -68,6 +61,10 @@ class App extends Component {
   }
 
   render() {
+    const filteredDrinks = this.state.drinks.filter(drinks => {
+      console.log(filteredDrinks);
+    return drinks.liquortype.toLowerCase().includes(this.state.input.toLowerCase());
+    })
     const { isSignedIn, route } = this.state;
     return (
       <div className="App">
@@ -75,10 +72,10 @@ class App extends Component {
         { route === 'home'
           ? <div>
               <Logo />
-              <SearchForm
-                onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-              />
+              <SearchForm onButtonSubmit={this.state.onButtonSubmit} onInputChange={this.onInputChange}/>
+              <Scroll>
+                <CardList drinks={filteredDrinks} />
+              </Scroll>
             </div>
           : (
              route === 'signin'

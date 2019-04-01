@@ -1,0 +1,9 @@
+/* .card {
+  background: rgba(0,128,128,1);
+} */
+
+.card {
+  background: #0ccac4;
+  /* color: black; */
+  color: rgba(7,27,82,1);
+}

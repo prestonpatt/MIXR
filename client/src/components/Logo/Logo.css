@@ -2,6 +2,14 @@
   background: linear-gradient(to left, rgba(7,27,82,1) 0%, rgba(0,128,128,1) 70%);
 }
 
+/* .Tilt {
+  background: rgba(0,128,128,1);
+} */
+
+/* .Tilt {
+  background: rgba(7,27,82,1);
+} */
+
 .particles {
   position:fixed;
   top: 0;
