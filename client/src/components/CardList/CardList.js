@@ -1,17 +1,17 @@
 import React from 'react';
-import Card from './Card';
+import Card from '../Card/Card';
 
-const CardList = ({ drinks }) => {
+const CardList = ({ onInputChange, onButtonSubmit, drinks }) => {
   return (
     <div>
       {
         drinks.map((user, i) => {
           return (
             <Card 
-              key={i} 
-              id={drinks[i].id} 
-              name={drinks[i].name}  
-            />
+            key={i} 
+            id={drinks[i].id} 
+            drinkname={onInputChange} 
+            liquortype={drinks[i].drinkname}/>
           );
         })
       }
