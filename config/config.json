@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "cocktailsDB",
-    "host": "localhost",
+    "username": "",
+    "password": "",
+    "database": "",
+    "host": "",
     "dialect": "mysql"
   },
   "test": {
