@@ -1,4 +1,6 @@
 //TODO 
+//? For pull request to GitHub I had to add the client folder's package-lock.json to the .gitignore and change the config.json jawsdb credentials
+//? I pinned the jawsdb config file credentials to the slack channel
 
 //* SearchForm
 //needs to populate drink cards after we click on the search button
