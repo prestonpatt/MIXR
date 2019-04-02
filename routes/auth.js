@@ -55,6 +55,8 @@ module.exports = function (app) {
 
     app.post('/register', function (req, res, next) {
         var hash = bcrypt.hashSync(req.body.password, 10);
+
+        console.log('this should be registering');
         db.Users.create({
             name: req.body.name,
             email: req.body.email,

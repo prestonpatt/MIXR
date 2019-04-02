@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         age: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             validate: {
                 isNumeric: true,
             }

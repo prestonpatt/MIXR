@@ -4,6 +4,11 @@ var db = require("../models");
 
 module.exports = function (app) {
   // Get all examples
+  app.get("/api/drinks", function (req, res) {
+    db.drinks.findAll({}).then(function (result) {
+      res.json(result);
+    });
+  }),
   app.get("/api/:drink", function (req, res) {
     db.drinks.findAll({
       where: {

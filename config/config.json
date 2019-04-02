@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "password",
-    "database": "cocktailsDB",
-    "host": "localhost",
+    "username": "wz6mrzj4umxbu6ia",
+    "password": "sstd0nlho7bz9nhi",
+    "database": "us7cq150r8rpi77f",
+    "host": "y5s2h87f6ur56vae.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {

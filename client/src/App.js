@@ -27,11 +27,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000')
-      .then(response => response.text())
-      .then(console.log)
-  }
 
   loadUser = (data) => {
     this.setState({user: {
@@ -61,10 +56,7 @@ class App extends Component {
   }
 
   render() {
-    const filteredDrinks = this.state.drinks.filter(drinks => {
-      console.log(filteredDrinks);
-    return drinks.liquortype.toLowerCase().includes(this.state.input.toLowerCase());
-    })
+    
     const { isSignedIn, route } = this.state;
     return (
       <div className="App">
@@ -74,7 +66,7 @@ class App extends Component {
               <Logo />
               <SearchForm onButtonSubmit={this.state.onButtonSubmit} onInputChange={this.onInputChange}/>
               <Scroll>
-                <CardList drinks={filteredDrinks} />
+                <CardList drinks={drinks} />
               </Scroll>
             </div>
           : (

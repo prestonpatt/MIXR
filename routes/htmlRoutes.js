@@ -1,14 +1,14 @@
-/* eslint-disable no-unused-vars */
-var db = require("../models");
+// /* eslint-disable no-unused-vars */
+// var db = require("../models");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Drinks.findAll({}).then(function(dbExamples) {
-      res.status(200);
-    });
-  });
-};
+// module.exports = function(app) {
+//   // Load index page
+//   app.get("/", function(req, res) {
+//     db.Drinks.findAll({}).then(function(dbExamples) {
+//       res.status(200);
+//     });
+//   });
+// };
 
 //   // Load example page and pass in an example by id
 //   app.get("/signin", function(req, res) {
