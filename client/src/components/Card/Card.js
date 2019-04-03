@@ -15,8 +15,8 @@ const Card = ({
       }}
       />
       <div>
-        <h2 className='fw2 dib'>{drinkname}</h2>
-        {/* <p className='fw2'>{liquortype}</p> */}
+        <h2 className='modal fw2 dib'>{drinkname}</h2><br></br>
+        <button className='modal fw1'>Order</button>
       </div>
     </div>
   );
