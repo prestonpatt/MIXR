@@ -1,10 +1,14 @@
 {
   "development": {
+<<<<<<< Updated upstream
     "username": "",
     "password": "",
     "database": "",
     "host": "",
     "dialect": "mysql"
+=======
+    "use_env_variable": "JAWSDB_URL"
+>>>>>>> Stashed changes
   },
   "test": {
     "username": "root",
