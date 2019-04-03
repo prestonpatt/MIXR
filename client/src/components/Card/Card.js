@@ -2,18 +2,17 @@ import React from 'react';
 import './Card.css';
 
 const Card = ({ 
-  // liquortype, 
+  onClick, 
   drinkThumb,
   drinkname, id }) => {
   return (
-    <div className='card tc dib br3 pa3 ma2 grow bw2 shadow-5'>
+    <div className='card tc dib br3 pa3 ma2 grow bw2 shadow-5' onClick={onClick}> 
       <img alt='cocktail' 
       src={drinkThumb} 
       style={{
         width: 200,
         height: 200
       }}
-      // src={`https://robohash.org/${id}?200x200`} 
       />
       <div>
         <h2 className='fw2 dib'>{drinkname}</h2>

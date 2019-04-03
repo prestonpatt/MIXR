@@ -34,7 +34,7 @@ class Register extends React.Component {
     })
       .then(
         // response => response.json()
-        console.log('something')
+        // console.log('something')
         )
       .then(user => {
         if (user) {
