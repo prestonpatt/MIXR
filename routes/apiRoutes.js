@@ -5,16 +5,6 @@ var db = require("../models");
 module.exports = function (app) {
   // Get all examples
   app.get("/api/drinks", function (req, res) {
-<<<<<<< Updated upstream
-    db.drinks.findAll({}).then(function (result) {
-      res.json(result);
-    });
-  }),
-  app.get("/api/:drink", function (req, res) {
-    db.drinks.findAll({
-      where: {
-=======
-    console.log(req.query);
     var options = {};
     if (req.query.attributes) {
       options.attributes = req.query.attributes.split(",");
@@ -25,7 +15,6 @@ module.exports = function (app) {
 
     if (req.query.find) {
       options.where = {
->>>>>>> Stashed changes
         $or: [
           { 'strIngredient1': { like: '%' + req.query.find + '%' } },
           { 'strIngredient2': { like: '%' + req.query.find + '%' } },
