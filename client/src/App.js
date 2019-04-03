@@ -13,7 +13,7 @@ class App extends Component {
     super();
     this.state = {
       drinks: [],
-      onInputChange: '',
+      inputValue: '',
       onButtonSubmit: '',
       input: '',
       route: 'signin',
@@ -48,12 +48,12 @@ class App extends Component {
 
   onInputChange = (event) => {
     this.setState({
-      onInputChange: event.target.value
+      inputValue: event.target.value
     })
   }
 
-  onButtonSubmit = (event) => {
-    var searchedText = document.getElementById('searchBar').value;
+  onButtonSubmit = () => {
+    var searchedText = this.state.inputValue
     fetch('http://localhost:3000/api/drinks?limit=20&find=' + searchedText)
       .then(res => res.json())
       .then(

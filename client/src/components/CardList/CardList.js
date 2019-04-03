@@ -26,7 +26,7 @@ class CardList extends React.Component {
       <div>
         <Modal open={this.state.open} onClose={this.onCloseModal} center>
           <h1 className='modal fw1'>{strDrink}</h1>
-          <h2>{ingredients}</h2>
+          <h2>ingredients</h2>
           <ul className='modal fw1'>
           {ingredients && ingredients.map(ingredient => {
             return(
