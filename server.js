@@ -1,6 +1,8 @@
 /* eslint-disable quotes */
 /* eslint-disable prettier/prettier */
-require("dotenv").config();
+var dotenv = require('dotenv');
+dotenv.config();
+
 var express = require("express");
 var exphbs = require("express-handlebars");
 
