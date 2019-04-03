@@ -1,56 +1,23 @@
 import * as React from 'react';
 import Card from '../Card/Card';
-import drinks from '../../drinks';
 import Modal from 'react-responsive-modal';
+import './CardList.css';
 
 class CardList extends React.Component {
   constructor() {
     super();
     this.state = {
       open: false,
-      drinks: drinks,
-      onInputChange: '',
-      onButtonSubmit: '',
-      input: '',
-      route: 'signin',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: ''
-      }
+      drinkInModal: {}
     }
   }
 
-  // onInputChange = (event) => {
-  //   console.log(event.target.value);
-  //   this.setState({ input: event.target.value })
-  // }
-  
   onCloseModal = () => {
     this.setState({ open: false })
   }
-  
-  onButtonSubmit = (event) => {
-    // this.setState({ onButtonSubmit: event.target.value })
-    console.log(event);
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:3000/api/drinks')
-    .then(res => res.json())
-      .then(
-        (result) => {
-        this.setState({
-          drinks: result
-        })
-        // console.log(result.text())
-        console.log('this is the state???', result)
-      })
-  }
-  // ({ onInputChange, onButtonSubmit, drinks }) => {
 
   render() {
+    const { strDrink, ingredients } = this.state.drinkInModal
     // const filteredDrinks = this.state.drinks.filter(drinks => {
     //   console.log(filteredDrinks);
     // return drinks.strIngredient1.toLowerCase().includes(this.state.input.toLowerCase());
@@ -58,22 +25,37 @@ class CardList extends React.Component {
     return (
       <div>
         <Modal open={this.state.open} onClose={this.onCloseModal} center>
-          <h2 className='sega fw1'>Simple centered modal</h2>
+          <h1 className='modal fw1'>{strDrink}</h1>
+          <h2>{ingredients}</h2>
+          <ul className='modal fw1'>
+          {ingredients && ingredients.map(ingredient => {
+            return(
+              <li>{ingredient.strName} - {ingredient.strMeasure}</li>
+            )
+          })}
+          </ul>
+          <button className='modal fw1 center'>Add to Amazon Shopping Cart</button>
+
         </Modal>
         {
-          this.state.drinks.map((user, i) => {
+          this.props.drinks.map((drink) => {
             return (
               <Card onClick={() => {
                 this.setState({ open: true })
-              }
-              }
-                key={i}
-                id={i}
+                fetch('http://localhost:3000/api/drinks/' + drink.id)
+                .then(res => res.json())
+                .then(result => {
+                  this.setState({
+                    drinkInModal: result
+                  })
+                })
+              }}
+                key={drink.id}
                 // drinkname={this.onInputChange}
-                drinkname = {this.state.drinks[i].strDrink}
+                drinkname={drink.strDrink}
                 // liquortype={drinks[0][i].strCategory} 
-                drinkThumb={this.state.drinks[i].strDrinkThumb}
-                />
+                drinkThumb={drink.strDrinkThumb}
+              />
             );
           })
         }
@@ -83,5 +65,3 @@ class CardList extends React.Component {
 }
 
 export default CardList;
-
-// Get the category for the drink where id = i
