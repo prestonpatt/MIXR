@@ -9,7 +9,9 @@ const SearchForm = ({ onInputChange, onButtonSubmit }) => {
       </p>
       <div className='center'>
         <div className='ba form center pa4 br3 shadow-5 bw2'>
-          <input className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 bw1' type='text' onChange={onInputChange}/>
+          <input className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 bw1' type='text' 
+          onChange={onInputChange}
+          />
           <button
             className='sega fw1 w-30 grow f4 link ph3 pv2 dib bg-black bg-transparent b--black'
             onClick={onButtonSubmit}>Search</button>

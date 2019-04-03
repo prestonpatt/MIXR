@@ -1,11 +1,13 @@
 import * as React from 'react';
 import Card from '../Card/Card';
 import drinks from '../../drinks';
+import Modal from 'react-responsive-modal';
 
 class CardList extends React.Component {
   constructor() {
     super();
     this.state = {
+      open: false,
       drinks: drinks,
       onInputChange: '',
       onButtonSubmit: '',
@@ -20,13 +22,18 @@ class CardList extends React.Component {
     }
   }
 
-  onInputChange = (event) => {
-    console.log(event.target.value);
-    this.setState({ input: event.target.value })
+  // onInputChange = (event) => {
+  //   console.log(event.target.value);
+  //   this.setState({ input: event.target.value })
+  // }
+  
+  onCloseModal = () => {
+    this.setState({ open: false })
   }
-  onButtonSubmit = () => {
-    this.setState({ onButtonSubmit: this.state.onInputChange })
-    console.log('click');
+  
+  onButtonSubmit = (event) => {
+    // this.setState({ onButtonSubmit: event.target.value })
+    console.log(event);
   }
 
   componentDidMount() {
@@ -50,10 +57,16 @@ class CardList extends React.Component {
     // })
     return (
       <div>
+        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+          <h2 className='sega fw1'>Simple centered modal</h2>
+        </Modal>
         {
           this.state.drinks.map((user, i) => {
             return (
-              <Card
+              <Card onClick={() => {
+                this.setState({ open: true })
+              }
+              }
                 key={i}
                 id={i}
                 // drinkname={this.onInputChange}

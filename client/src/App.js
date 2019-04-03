@@ -37,15 +37,27 @@ class App extends Component {
   }
 
   onInputChange = (event) => {
-    console.log(event.target.value);
-    this.setState({input: event.target.value})
+    this.setState({
+      onInputChange: event.target.value
+    })
   }
   
-  onButtonSubmit = () => {
-    this.setState({ onButtonSubmit: this.state.onInputChange })
-    console.log('click');
+  // onButtonSubmit = (event) => {
+  //   this.setState({ onButtonSubmit: event.target.value })
+  //   console.log('click');
+  // }
+  onButtonSubmit = (event) => {
+    fetch('http://localhost:3000/api/:drinks')
+    .then(res => res.json())
+      .then(
+        (result, req) => {
+        this.setState({
+          onButtonSubmit: result
+        })
+        // console.log(event)
+      })
   }
-
+  
   onRouteChange = (route) => {
     if (route === 'signout') {
       this.setState({isSignedIn: false})
@@ -64,7 +76,7 @@ class App extends Component {
         { route === 'home'
           ? <div>
               <Logo />
-              <SearchForm onButtonSubmit={this.state.onButtonSubmit} onInputChange={this.onInputChange}/>
+              <SearchForm onButtonSubmit={this.onButtonSubmit} onInputChange={this.onInputChange}/>
               <Scroll>
                 <CardList drinks={drinks} />
               </Scroll>
