@@ -1,10 +1,6 @@
 {
   "development": {
-    "username": "",
-    "password": "",
-    "database": "",
-    "host": "",
-    "dialect": "mysql"
+    "use_env_variable": "JAWSDB_URL"
   },
   "test": {
     "username": "root",
