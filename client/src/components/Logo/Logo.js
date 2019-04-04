@@ -22,7 +22,7 @@ const Logo = () => {
       <Tilt className="Tilt br2 shadow-2" options={{ max : 80 }} style={{ height: 200, width: 400 }} >
       <Particles className='particles' params={particlesOptions}/>
         <div className="Tilt-inner pa3">
-          <img style={{paddingTop: '2px', width: 200, height: 150 }} alt='logo' src={cocktail}/>
+          <img style={{paddingTop: '6px', width: 200, height: 150 }} alt='logo' src={cocktail}/>
           <div className="module mid"><h3>MIXR</h3></div>
         </div>
       </Tilt>

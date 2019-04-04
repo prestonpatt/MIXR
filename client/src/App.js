@@ -53,7 +53,7 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    var searchedText = this.state.inputValue
+    const searchedText = this.state.inputValue
     fetch('http://localhost:3000/api/drinks?limit=20&find=' + searchedText)
       .then(res => res.json())
       .then(

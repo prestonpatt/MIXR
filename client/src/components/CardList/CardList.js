@@ -18,32 +18,31 @@ class CardList extends React.Component {
 
   render() {
     const { strDrink, ingredients } = this.state.drinkInModal
-    // const filteredDrinks = this.state.drinks.filter(drinks => {
-    //   console.log(filteredDrinks);
-    // return drinks.strIngredient1.toLowerCase().includes(this.state.input.toLowerCase());
-    // })
+
     return (
       <div>
-        <Modal open={this.state.open} onClose={this.onCloseModal} center>
-          <h1 className='modal center fw1'>{strDrink}</h1>
-          <h2 className='modal fw1'>Ingredients:</h2>
-          <ul className='modal fw1'>
-          {ingredients && ingredients.map(ingredient => {
-            return(
-              <div>
-                <li>{ingredient.strName} - {ingredient.strMeasure}</li>
-              </div>
-            )
-          })}
-          </ul>
-          <h2 className='modal fw1'>How to Make:</h2>
-          {ingredients && ingredients.map(ingredient => {
-            return (
-              <p className='modal fw1'>{ingredient.strIngredient}</p>
+        <div className='drink-modal'>
+          <Modal open={this.state.open} onClose={this.onCloseModal} center style={{ color: 'black' }}>
+            <h1 className='drink-modal center fw1 b underline'>{strDrink}</h1>
+            <h3 className='drink-modal fw1'>Ingredients:</h3>
+            <ul className='drink-modal fw0'>
+            {ingredients && ingredients.map(ingredient => {
+              return(
+                <div>
+                  <li>{ingredient.strName} - {ingredient.strMeasure}</li>
+                </div>
               )
-          })}
-          <button className='modal fw1 center'>Add to Amazon Shopping Cart</button>
-        </Modal>
+            })}
+            </ul>
+            <h3 className='drink-modal fw1'>How to Make:</h3>
+            {ingredients && ingredients.map(ingredient => {
+              return (
+                <p className='drink-modal fw1'>{ingredient.strIngredient}</p>
+                )
+            })}
+            <button className='modal fw1 center'>Add to Amazon Shopping Cart</button>
+          </Modal>
+        </div>
         {
           this.props.drinks.map((drink) => {
             return (
@@ -58,9 +57,9 @@ class CardList extends React.Component {
                 })
               }}
                 key={drink.id}
-                // drinkname={this.onInputChange}
+                
                 drinkname={drink.strDrink}
-                // liquortype={drinks[0][i].strCategory} 
+                
                 drinkThumb={drink.strDrinkThumb}
               />
             );
