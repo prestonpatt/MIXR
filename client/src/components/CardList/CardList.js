@@ -25,17 +25,24 @@ class CardList extends React.Component {
     return (
       <div>
         <Modal open={this.state.open} onClose={this.onCloseModal} center>
-          <h1 className='modal fw1'>{strDrink}</h1>
-          <h2>ingredients</h2>
+          <h1 className='modal center fw1'>{strDrink}</h1>
+          <h2 className='modal fw1'>Ingredients:</h2>
           <ul className='modal fw1'>
           {ingredients && ingredients.map(ingredient => {
             return(
-              <li>{ingredient.strName} - {ingredient.strMeasure}</li>
+              <div>
+                <li>{ingredient.strName} - {ingredient.strMeasure}</li>
+              </div>
             )
           })}
           </ul>
+          <h2 className='modal fw1'>How to Make:</h2>
+          {ingredients && ingredients.map(ingredient => {
+            return (
+              <p className='modal fw1'>{ingredient.strIngredient}</p>
+              )
+          })}
           <button className='modal fw1 center'>Add to Amazon Shopping Cart</button>
-
         </Modal>
         {
           this.props.drinks.map((drink) => {
