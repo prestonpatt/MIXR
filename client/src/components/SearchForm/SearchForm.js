@@ -5,11 +5,11 @@ const SearchForm = ({ onInputChange, onButtonSubmit }) => {
   return (
     <div>
       <p className='f3 sega'>
-        {'Search for your favorite type of liquor'}
+        {'Search By Drink Ingredient or Liquor Type'}
       </p>
       <div className='center'>
         <div className='ba form center pa4 br3 shadow-5 bw2'>
-          <input id='modal searchBar' className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 bw1' type='text' 
+          <input id='searchBar' className='pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100 bw1 search-style' type='text' 
           onChange={onInputChange}
           />
           <button
