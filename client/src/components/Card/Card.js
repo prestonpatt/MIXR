@@ -15,7 +15,7 @@ const Card = ({
       }}
       />
       <div>
-        <h2 className='modal fw2 dib'>{drinkname}</h2><br></br>
+        <h2 className='modal fw2 dib b'>{drinkname}</h2><br></br>
         <button className='modal fw1'>Order From Bar</button>
       </div>
     </div>

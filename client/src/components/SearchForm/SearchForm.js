@@ -13,7 +13,7 @@ const SearchForm = ({ onInputChange, onButtonSubmit }) => {
           onChange={onInputChange}
           />
           <button
-            className='sega fw1 w-30 grow f4 link ph3 pv2 dib bg-black bg-transparent b--black'
+            className='sega fw1 w-30 grow f4 link pv2 dib bg-black bg-transparent b--black SF-button'
             onClick={onButtonSubmit}>Search</button>
         </div>
       </div>
