@@ -48,7 +48,7 @@ class CardList extends React.Component {
             return (
               <Card onClick={() => {
                 this.setState({ open: true })
-                fetch('http://localhost:3000/api/drinks/' + drink.id)
+                fetch('/api/drinks/' + drink.id)
                 .then(res => res.json())
                 .then(result => {
                   this.setState({
