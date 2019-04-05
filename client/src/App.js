@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/drinks?limit=50')
+    fetch('/api/drinks?limit=50')
     .then(res => res.json())
     .then(result => {
       this.setState({
@@ -54,7 +54,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     const searchedText = this.state.inputValue
-    fetch('http://localhost:3000/api/drinks?limit=20&find=' + searchedText)
+    fetch('/api/drinks?limit=20&find=' + searchedText)
       .then(res => res.json())
       .then(
         (result) => {
