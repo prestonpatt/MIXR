@@ -18,5 +18,5 @@ A Favor-esque liquor delivery app where a user can order alcoholic beverages for
 ## Technologies Used
 HTML, CSS, JavaScript, jQuery, React, Tachyons, React-Particles, React-Tilt, MySQL, Express, Node, Sequelize
 TheCocktailDB API
-## Issues
-Issues will be assigned as we flesh out our ideas.
+## Deployed Site
+https://blueberry-pudding-93261.herokuapp.com/
