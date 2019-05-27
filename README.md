@@ -2,7 +2,7 @@
 
 ![MIXR Logo](https://media.giphy.com/media/ME9kd61oWECeDaTqlL/giphy.gif "MIXR Logo")
 
-# Deployed Site
+## Deployed Site
 Click [here](https://blueberry-pudding-93261.herokuapp.com/ "MIXR App") to check out our app. 
 
 ## Description
