@@ -26,7 +26,7 @@
     "react-particles-js": "^2.5.1",
     "react-scripts": "^2.1.8",
     "react-tilt": "^0.1.4",
-    "sequelize": "^4.41.2",
+    "sequelize": "^5.15.1",
     "tachyons": "^4.11.1"
   },
   "devDependencies": {
